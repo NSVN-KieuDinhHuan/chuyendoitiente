@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển đổi Tiền tệ</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th style="width: 200px">Amount</th>
+        <th style="width: 200px">From Currency</th>
+        <th style="width: 200px">To Currency</th>
+    </tr>
+    <tr>
+        <td>
+            <input id="amount" name="amount" style="width: 200px ;height:15px ">
+        </td>
+        <td>
+            <select name="fromcurr" id="fr_c" style="width: 200px ;height:20px ">
+                <option value="22930">Việt Nam (VND)</option>
+                <option value="1">Mỹ (USD)</option>
+                <option value="200">Nhật (JPN)</option>
+                <option value="3500">Trung Quốc (NDT)</option>
+            </select>
+        </td>
+        <td>
+            <select name="tocurr" id="to_c" style="width: 200px;height:20px ">
+                <option value=22930>Việt Nam (VND)</option>
+                <option value=1>Mỹ (USD)</option>
+                <option value=200>Nhật (JPN)</option>
+                <option value=3500>Trung Quốc (NDT)</option>
+            </select>
+        </td>
+        <td>
+            <button onclick="chuyendoi()">Convert</button>
+        </td>
+    </tr>
+</table>
+<br>
+<div id="res" style="color: darkblue">Result:</div>
+<script>
+function chuyendoi() {
+    let am=parseFloat(document.getElementById("amount").value)
+    let fc=parseFloat(document.getElementById("fr_c").value)
+    let tc=parseFloat(document.getElementById("to_c").value)
+    let num=tc* am/fc
+    document.getElementById("res").innerHTML="Result :"+num
+
+}
+</script>
+</body>
+</html>
